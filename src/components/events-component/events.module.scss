@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-background);
+  .headerWrapper {
+    align-items: center;
+    .workHeader {
+      color: black;
+      font-size: calc(1rem + 25vw);
+      opacity: 0;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      transform: translateY(100px);
+    }
+  }
+}

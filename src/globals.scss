@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "climateCrisis";
+  color: #333735;
+}
+
+:root {
+  --dark-background: #333735;
+  --black-background: black;
+  --white-background: #e7e4df;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// @font-face {
+//   font-family: "Inconsolata";
+//   src: url("../public/fonts/inconsolata/static/Inconsolata-Regular.ttf")
+//     format("ttf");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: "montserrat";
+//   src: url("./public/fonts/montserrat/Montserrat-variable.ttf") format("ttf");
+//   font-weight: normal;
+//   font-style: normal;
+// }

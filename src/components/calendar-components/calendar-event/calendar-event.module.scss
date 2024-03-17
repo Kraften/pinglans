@@ -1,0 +1,20 @@
+.event {
+  padding-left: 20px;
+  margin: 7px;
+  list-style: none;
+  border-left: 11px solid black;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  .eventName {
+    font-size: 2em;
+  }
+  .eventTime {
+    font-size: 2em;
+  }
+}
+//   &.eventIsToday {
+//     border-left: 11px solid white;
+//   }
+
+//   &.eventIsOld {
+//     opacity: 0.1;
+//   }

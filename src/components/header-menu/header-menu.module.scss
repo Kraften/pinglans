@@ -1,0 +1,32 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  padding: 1.5rem;
+  z-index: 99;
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    cursor: pointer;
+    color: white;
+  }
+  .menuList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    cursor: pointer;
+
+    li {
+      h3 {
+        text-transform: uppercase;
+        color: white;
+      }
+      h3:hover {
+        color: #8b1414;
+      }
+    }
+  }
+}

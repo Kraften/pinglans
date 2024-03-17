@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "climateCrisis";
+  src: url("./public/") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.hero {
+  height: 100dvh;
+  .imageGrid {
+    height: 100%;
+    background-image: url("/ping.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .heroCard {
+    width: 75rem;
+    height: 35rem;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: var(--white-background);
+
+    h1 {
+      font-family: "climateCrisis";
+      color: green;
+      // font-family: "montserrat";
+      font-size: calc(1rem + 25vw);
+      // margin: 0;
+      // padding: 0;
+    }
+  }
+}

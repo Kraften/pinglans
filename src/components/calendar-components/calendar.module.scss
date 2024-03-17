@@ -1,0 +1,23 @@
+.calendarWrapper {
+  padding: 0 30px;
+  &:global {
+    animation: fadeIn 500ms linear forwards;
+  }
+  .year {
+    font-size: 4em;
+    background-color: var(--calendar-black);
+    padding-left: 10px;
+  }
+  .calendarList {
+    list-style: none;
+  }
+}
+
+// const Nothing = styled.div`
+//   user-select: none;
+//   font-size: calc(1rem + 16vw);
+//   font-weight: 800;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   letter-spacing: -6px;
