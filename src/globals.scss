@@ -2,17 +2,15 @@
   padding: 0;
   margin: 0;
 }
-body {
-  font-family: "climateCrisis";
-  color: #333735;
-}
 
 :root {
-  --dark-background: #333735;
-  --black-background: black;
-  --white-background: #e7e4df;
+  --text-color: black;
+  --border: 1px solid #dbdbdb;
 }
-
+body {
+  color: var(--text-color);
+  font-family: "Montserrat";
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -31,18 +29,3 @@ body {
     opacity: 1;
   }
 }
-
-// @font-face {
-//   font-family: "Inconsolata";
-//   src: url("../public/fonts/inconsolata/static/Inconsolata-Regular.ttf")
-//     format("ttf");
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: "montserrat";
-//   src: url("./public/fonts/montserrat/Montserrat-variable.ttf") format("ttf");
-//   font-weight: normal;
-//   font-style: normal;
-// }

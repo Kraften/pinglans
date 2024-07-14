@@ -13,7 +13,6 @@ interface Props {
  * @returns
  */
 const CalendarMonthComponent: React.FC<Props> = ({ events, monthName }) => {
-  console.log("🚀 ~ events:", events);
   const eventsInMonth: Concert[] = [];
   // Map events into month buckets.
   events.map((event) => {

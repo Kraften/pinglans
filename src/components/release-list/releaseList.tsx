@@ -1,12 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Album from "../album";
-
 import styles from "./release-list.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { releasesStore } from "../../store/releases-store";
-import { Release } from "../../contracts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +21,7 @@ const ReleaseList: React.FC = () => {
       "https://api.discogs.com/artists/4836659/releases",
       {
         params: {
-          token: import.meta.env.PUBLIC_DISCOG_TOKEN,
+          token: import.meta.env.VITE_PUBLIC_DISCOG_TOKEN,
         },
       }
     );
@@ -38,6 +36,7 @@ const ReleaseList: React.FC = () => {
 
   useEffect(() => {
     main.current.forEach((el) => {
+      console.log("🚀 ~ main.current.forEach ~ el:", el);
       const anim = gsap.to(el, {
         duration: 1,
         ease: "power2",
@@ -94,15 +93,8 @@ const ReleaseList: React.FC = () => {
       <ul className={styles.releaseList}>
         {releases.map((release) => {
           return (
-            // <li key={release.id}>{release.title}</li>
-            // <li key={release.id}>{release.title}</li>
             <div className={styles.mask} key={release.id} ref={addToRefs}>
-              <Album
-                {...release}
-                release={release}
-                // mouseEnter={show}
-                // mouseLeave={hide}
-              ></Album>
+              <Album {...release} release={release}></Album>
             </div>
           );
         })}

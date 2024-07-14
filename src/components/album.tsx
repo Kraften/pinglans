@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./album.module.scss";
-// import axios from "axios";
+import axios from "axios";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Release } from "../contracts";
@@ -10,45 +10,48 @@ gsap.registerPlugin(ScrollTrigger);
 interface Props {
   release: Release;
 }
+interface ReleaseViewModel {
+  imgUrl: string;
+  linkUri: string;
+  title: string;
+}
 
 const Album: React.FC<Props> = ({ release }) => {
-  // const [albumImgUrl, setAlbumImgUrl] = useState("");
-  // const revealRef = useRef();
-  // const ref = useRef();
+  const [album, setAlbum] = useState<ReleaseViewModel>();
 
-  // const fetchRelease = async () => {
-  //   const res = await axios.get(release.resource_url, {
-  //     params: {
-  //       token: import.meta.env.PUBLIC_DISCOG_TOKEN,
-  //     },
-  //   });
+  const fetchRelease = async () => {
+    const res = await axios.get(release.resource_url, {
+      params: {
+        token: import.meta.env.VITE_PUBLIC_DISCOG_TOKEN,
+      },
+    });
 
-  //   const { data } = await res;
-  //   setAlbumImgUrl(data.images[0].uri);
-  // };
+    const { data } = await res;
+    setAlbum({
+      imgUrl: data.images[0].uri,
+      linkUri: data.uri,
+      title: data.title,
+    });
+  };
 
   useEffect(() => {
-    // fetchRelease();
+    fetchRelease();
   }, []);
+
+  const onAlbumClick = () => {
+    window.open(album?.linkUri, "_blank");
+  };
 
   return (
     <li>
       {release && (
         <div className={`${styles.release}`}>
-          {/* {release && (
-            <img
-              src={albumImgUrl}
-              // priority={true}
-              width={400}
-              height={400}
-              alt="Picture of the a release"
-            />
-          )} */}
           <img
-            alt="aa"
+            onClick={() => onAlbumClick()}
+            alt={album?.title}
             width={500}
             height={500}
-            src={"/a.webp"}
+            src={album?.imgUrl}
             key={release.id}
           ></img>
           <div className="flex-row">

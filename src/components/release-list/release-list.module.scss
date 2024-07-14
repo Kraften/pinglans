@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--white-background);
+
   .mask {
     opacity: 0;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
     transform: translateY(100px);
   }
   .workHeader {
-    font-size: calc(1rem + 25vw);
+    font-size: calc(1rem + 15vw);
     opacity: 0;
+    font-weight: 500;
+    font-family: "Montserrat";
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
     transform: translateY(100px);
   }
@@ -31,6 +33,12 @@
     }
   }
   @media (max-width: 1200px) {
+    .releaseList {
+      grid-template-columns: repeat(2, auto);
+      grid-gap: 1vw;
+    }
+  }
+  @media (max-width: 1000px) {
     .releaseList {
       grid-template-columns: repeat(1, auto);
       grid-gap: 1vw;

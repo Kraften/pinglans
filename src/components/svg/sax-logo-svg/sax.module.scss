@@ -1,0 +1,32 @@
+.logo {
+  width: 80%;
+  height: auto;
+}
+.st1,
+.st2 {
+  fill: #ee4c86;
+  stroke: #000;
+  stroke-width: 19;
+  stroke-miterlimit: 10;
+}
+.st2 {
+  fill: none;
+}
+.st4 {
+  fill: #f7931e;
+}
+.st4,
+.st5 {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+.header {
+  position: fixed;
+  top: 0;
+}
+
+@media (max-width: 1500px) {
+  .logo {
+    width: 100%;
+  }
+}

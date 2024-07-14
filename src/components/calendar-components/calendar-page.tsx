@@ -85,7 +85,6 @@ const CalendarComponent: React.FC = () => {
     const litsElementsByYear = [];
     for (const [year, eventList] of Object.entries(eventsInYearBuckets)) {
       const a = organizeEventsByMonth(eventList);
-      console.log("🚀 ~ listElementsByYear ~ a:", a);
       litsElementsByYear.push(
         <li key={year}>
           {today.format("YYYY") !== year ? (
